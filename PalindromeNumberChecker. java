@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class PalindromeNumberChecker
+ {
+    public static void main(String[] args)
+   {
+        Scanner sc1 = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc1.nextInt();
+        
+        if (isPalindrome(n))
+       {
+            System.out.println(n + " is a palindrome number.");
+        } 
+        else 
+        {
+            System.out.println(n + " is not a palindrome number.");
+        }
+    }
+
+    public static boolean isPalindrome(int num) 
+     {
+        int originalNum = num;
+        int reversedNum = 0;
+        
+        while (num != 0) 
+        {
+            int digit = num % 10;
+            reversedNum = reversedNum * 10 + digit;
+            num /= 10;
+        }
+        
+        return originalNum == reversedNum;
+    }
+}
